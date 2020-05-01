@@ -8,4 +8,5 @@ import ru.nick.taskapp.entity.User;
  * @project task-app
  */
 public interface UserRepository extends JpaRepository<User,Long> {
+    User findByUsername(String username);
 }
