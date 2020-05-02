@@ -23,7 +23,7 @@
                     <a class="nav-link" href="/task">My Task</a>
                 </li>
             </ul>
-
+            <div class="navbar-text"><span th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</span></div>
             <div class="navbar-text mr-3"><span sec:authentication="name"></span></div>
             <a th:href="@{/logout}">Sign Out</a>
         </div>
