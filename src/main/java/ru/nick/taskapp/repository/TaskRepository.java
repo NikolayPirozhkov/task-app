@@ -4,6 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import ru.nick.taskapp.entity.Task;
 import ru.nick.taskapp.entity.User;
 
+import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -11,5 +13,7 @@ import java.util.Set;
  * @project task-app
  */
 public interface TaskRepository extends JpaRepository<Task,Long> {
-    Set<Task> findByUser(User user);
+    @Transactional
+    List<Task> findByUser(User user);
+    Set<Task> findByUserId(Long id);
 }

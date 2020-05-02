@@ -1,0 +1,22 @@
+<h1 xmlns:th="http://www.w3.org/1999/xhtml">Product list</h1>
+<div>
+    <form th:action="@{/task}" method="post">
+        <input type="text" name="name" placeholder="Введите название задачи" />
+        <input type="text" name="definition" placeholder="Описание задачи">
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+<table>
+    <tr>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>IN STOCK</th>
+    </tr>
+    <tr th:each="task : ${tasks}">
+        <td th:text="${task.name}">Onions</td>
+        <td th:text="${task.definition}">2.41</td>
+    </tr>
+</table>
+<p>
+    <a href="../home.html" th:href="@{/}">Return to home</a>
+</p>
