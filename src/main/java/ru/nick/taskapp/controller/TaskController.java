@@ -41,7 +41,6 @@ public class TaskController {
                                 @RequestParam String definition){
         taskService.addTaskToUser(user,name,definition);
 
-        return "task";
+        return "redirect:/task";
     }
-
 }
