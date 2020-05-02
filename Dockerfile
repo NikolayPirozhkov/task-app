@@ -1,5 +1,4 @@
-FROM openjdk:8
-COPY ./out/artifacts/task_app_jar/ /usr/src/task_app_jar
-WORKDIR /usr/src/task_app_jar
-RUN java -jar task-app.jar
-CMD ["java", "Main"]
+FROM adoptopenjdk/openjdk8:ubi
+RUN mkdir /opt/app
+COPY ./out/artifacts/task_app_jar/ /opt/app/task_app_jar
+CMD ["java", "-jar", "/opt/app/task_app_jar/task-app.jar"]
