@@ -25,7 +25,9 @@
             </ul>
             <div class="navbar-text"><span th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</span></div>
             <div class="navbar-text mr-3"><span sec:authentication="name"></span></div>
-            <a th:href="@{/logout}">Sign Out</a>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
         </div>
     </nav>
 </div>
