@@ -23,8 +23,20 @@
                         <div th:text="${task.definition}"></div>
                     </i>
                 </div>
+                <form th:action="@{/task/delete}" method="post" th:object="${task}">
+                    <input type="hidden" name="id" th:value="${task.id}"/>
+                    <button type="submit" name="delete" value="delete" class="btn btn-danger">Delete Task</button>
+                </form>
             </div>
             </div>
+        </div>
+        <div>
+            <p>
+                <a th:href ="@{/task/download}">Download All my task</a>
+            </p>
+            <p>
+                <a th:href ="@{/task/getJson}">Jsonace All my task</a>
+            </p>
         </div>
         <p>
             <a href="../home.html" th:href="@{/}">Return to home</a>
